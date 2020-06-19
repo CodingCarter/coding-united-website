@@ -3,7 +3,7 @@
     <div class="home-page">
       <main>
         <section>
-          <h1>We will <span>jump start</span> your programming career.</h1>
+          <h1>We will <span>jump</span>&nbsp;<span>start</span> your programming career.</h1>
           <h2>Start a free course today to learn how to make websites, applications, and even twitter bots!</h2>
           <div>
             <g-link to="/classes/">Explore our Free Classes</g-link>
@@ -20,7 +20,13 @@
 <script>
 export default {
   metaInfo: {
-      title: 'Home'
+      title: 'Home',
+      meta: [
+        {
+          name: 'description',
+          content: 'Our mission is to make learning how to code easy and affordable through our classes and videos!'
+        }
+      ]
   }
 }
 </script>
@@ -41,6 +47,10 @@ export default {
     @include tablet {
       grid-template-columns: 1fr;
     }
+
+    @include phone {
+      padding-top: 2rem;
+    }
     
     section:nth-of-type(1) {
       display: flex;
@@ -53,6 +63,10 @@ export default {
         line-height: 1.2;
         font-weight: 900;
 
+        @include phone {
+          font-size: 2.7rem;
+        }
+
         span {
           display: inline-block;
           color: $light-blue;
@@ -64,6 +78,10 @@ export default {
         margin: 2rem 0;
         font-size: 1.3rem;
         font-weight: 500;
+
+        @include phone {
+          font-size: 1.15rem;
+        }
       }
 
       div a {
@@ -76,6 +94,11 @@ export default {
         display: inline-block;
         transition: 400ms ease;
         border-radius: .2rem;
+
+        @include phone {
+          font-size: 1.6rem;
+          padding: 1rem 1.15rem;
+        }
 
         &:hover {
           opacity: 1;

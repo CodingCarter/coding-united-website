@@ -5,7 +5,7 @@ instructors:
 - slug: carter-snook
   name: Carter Snook
   image: /img/profile-pictures/carter-snook.png
-  bio: I am a 15 year old programmer who is currently a freshman in high school who is the sole founder of Coding United.  I have over 6,000 enrollments for my free courses spread across multiple platforms.  I hope to allow students to learn advanced and obscure aspects of frameworks or programming languages that are not usually taught elsewhere.
+  bio: Designer, Developer, and Founder of Coding United
 
 classesRoute: '/classes/'
 classes:

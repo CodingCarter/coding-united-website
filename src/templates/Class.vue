@@ -87,13 +87,18 @@ main.class-page {
                 opacity: .85;
                 transition: 600ms;
 
+                @include phone {
+                    width: 6.5rem;
+                    height: 6.5rem;
+                }
+
                 div {
                     position: absolute;
                     transform: translate(-50%, -50%);
                     top: 50%;
                     left: 55%;
-                    width: 6.5rem;
-                    height: 7.5rem;
+                    width: 65%;
+                    height: 75%;
                     background: #fff;
                     clip-path: polygon(80% 50%, 20% 20%, 20% 80%);
                 }
@@ -107,12 +112,21 @@ main.class-page {
                 font-size: 4rem;
                 margin: 0;
                 line-height: 1.2;
+
+                @include phone {
+                    margin: 1rem 0;
+                    font-size: 3rem;
+                }
             }
 
             h3 {
                 font-weight: 500;
                 margin: .65rem 0;
                 opacity: .95;
+
+                @include phone {
+                    margin-bottom: 2rem;
+                }
             }
 
             h2 {
@@ -156,9 +170,17 @@ main.class-page {
         padding: 5rem 0;
         padding-top: 4rem;
 
+        @include phone {
+            padding-top: 3rem;
+        }
+
         h3 {
             margin: 0;
             font-size: 2.5rem;
+
+            @include phone {
+                font-size: 1.6rem;
+            }
         }
 
         p, li {

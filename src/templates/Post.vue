@@ -3,7 +3,7 @@
     <main class="blog-post">
       <section class="post-info">
         <div>
-          <h2><span v-if="$page.post.category == 0">Updates</span><span v-html="' | ' + $page.post.timeToRead + ' Min Read'" /></h2>
+          <h2><span v-if="$page.post.category == 0" v-html="'Updates'" /><span v-html="' | ' + $page.post.timeToRead + ' Min Read'" /></h2>
           <h1 v-html="$page.post.title" />
           <h3 v-html="'Published by ' + $page.post.author + ' on ' + $page.post.date" />
         </div>

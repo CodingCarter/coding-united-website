@@ -111,11 +111,24 @@ main.content {
         max-height: 100%;
     }
 
+    @include phone {
+        width: 100%;
+        padding: 1rem 0;
+        padding-top: 0;
+        grid-gap: 0;
+        max-height: 110%;
+    }
+
     .url-container {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
+
+        @include phone {
+            padding-top: .5rem;
+            background: #fff;
+        }
 
         .url-container {
             position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;
@@ -184,11 +197,21 @@ section.course-info {
     padding: 5rem 10%;
     padding-top: 2.5rem;
 
+    @include phone {
+        width: 90%;
+        padding: 1rem 5%;
+    }
+
     h1 {
         font-size: 2.5rem;
         margin: 0;
         color: $dark-blue;
         padding-bottom: 2rem;
+
+        @include phone {
+            font-size: 2rem;
+            padding-bottom: 1.5rem;
+        }
     }
 
     h3 {
@@ -196,6 +219,10 @@ section.course-info {
         margin: 0;
         font-size: 1.8rem;
         font-weight: 500;
+
+        @include phone {
+            font-size: 1.6rem;
+        }
     }
 
     p, li {

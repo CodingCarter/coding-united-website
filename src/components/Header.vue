@@ -1,7 +1,6 @@
 <template>
     <header>
         <div>
-            <g-link to="/">Home</g-link>
             <g-link to="/classes/">Classes</g-link>
             <g-link to="/blog/">Blog</g-link>
         </div>
@@ -9,7 +8,7 @@
             <h3>
                 <g-link to="/">
                     <g-image src="~/favicon.png" alt="coding united logo" />
-                    Coding United
+                    <span>Coding United</span>
                 </g-link>
             </h3>
         </div>
@@ -28,6 +27,12 @@ header {
     color: $light-blue;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include phone {
+        width: 90%;
+        padding: .5rem 5%;
+        grid-template-columns: 100% auto;
+    }
     
     div {
         display: flex;
@@ -36,6 +41,12 @@ header {
         position: relative;
         $navLinkPadding: 1.1rem;
         
+        @include phone {
+            &:nth-of-type(1), &:nth-of-type(3) {
+                display: none;
+            }
+        }
+
         &:nth-of-type(1) {
             right: $navLinkPadding; // Correcting padding offset
         }

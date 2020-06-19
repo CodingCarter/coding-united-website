@@ -5,7 +5,7 @@
                 <g-image :src="$context.instructor.image" />
                 <h3>Instructor</h3>
                 <h1 v-html="$context.instructor.name" />
-                <p v-html="$context.instructor.bio" />
+                <h2 v-html="$context.instructor.bio" />
             </section>
             <h2>{{ $context.instructor.name.split(' ')[0] }}'s Latest Classes</h2>
             <section class="courses" id="classes">
@@ -52,9 +52,17 @@ main.instructor {
         align-items: center;
         padding-top: 5rem;
         margin-bottom: 3rem;
+
+        @include phone {
+            padding-top: 3rem;
+        }
     
         img {
-            height: 12rem;
+            height: 9.5rem;
+
+            @include phone {
+                height: 7.5rem;
+            }
         }
     
         h3 {
@@ -65,24 +73,42 @@ main.instructor {
             margin-bottom: 0;
             font-weight: 500;
             opacity: .85;
+
+            @include phone {
+                font-size: 1.15rem;
+            }
         }
 
         h1 {
             font-size: 3.2rem;
             margin: 0;
+
+            @include phone {
+                font-size: 2.75rem;
+            }
         }
     
-        p {
+        h2 {
             max-width: 52%;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.375rem;
+            font-weight: 400;
             line-height: 1.75;
+
+            @include phone {
+                font-size: 1.25rem;
+                max-width: 75%;
+            }
         }
     }
 
     & > h2 {
         margin: 2rem 0;
         font-size: 2rem;
+
+        @include phone {
+            text-align: center;
+        }
     }
 
     .courses {
