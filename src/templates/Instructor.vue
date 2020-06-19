@@ -9,7 +9,7 @@
             </section>
             <h2>{{ $context.instructor.name.split(' ')[0] }}'s Latest Classes</h2>
             <section class="courses" id="classes">
-                <div v-for="course in $context.data.classes.reverse()" v-bind:key="course.slug">
+                <div v-for="course in data.classes" v-bind:key="course.slug">
                     <CourseCard
                         v-if="course.instructor == $context.instructor.name"
                         :image="course.thumbnail"
@@ -24,12 +24,19 @@
 </template>
 
 <script>
+import data from '@/data/data.yaml'
+
 import CourseCard from '~/components/CourseCard.vue'
 
 export default {
     components: {
         CourseCard
     },
+    data() {
+        return {
+            data
+        }
+    }
 }
 </script>
 

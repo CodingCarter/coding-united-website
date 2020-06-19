@@ -1,5 +1,5 @@
 {
-  "name": "coding-site-2",
+  "name": "coding-united",
   "private": true,
   "scripts": {
     "build": "gridsome build",

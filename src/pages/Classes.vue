@@ -3,8 +3,8 @@
         <div class="wrapper">
             <main>
                 <h1>All Classes</h1>
-                <section class="courses" v-if="data.classes">
-                    <section v-for="course in data.classes.reverse()" v-bind:key="course.slug">
+                <section class="courses">
+                    <section v-for="course in data.classes" v-bind:key="course.slug">
                         <CourseCard
                             :image="course.thumbnail"
                             :title="course.title"
