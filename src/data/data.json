@@ -1,0 +1,159 @@
+{
+    "authors": [
+        {
+            "slug": "carter-snook",
+            "name": "Carter Snook",
+            "image": "https://img-a.udemycdn.com/user/200_H/51864060_d48d_4.jpg"
+        }
+    ],
+    "courses": [
+      {
+        "slug": "nuxt-js",
+        "title": "Nuxt JS",
+        "thumbnail": "https://i.postimg.cc/kXXyFJvz/udemy-thumbnail.png",
+        "instructor": "Carter Snook",
+        "date_created": "2020-04-29",
+        "description": "In this class we will be using Nuxt JS to create static generated websites that are amazing for SEO ranking and loading speed! Regular websites don't allow search crawlers to see the content of your page, therefore you never rank. Nuxt JS uses Vue JS, so if you are familiar with Vue JS, you will be set for this course. With Nuxt js, the site is generated into plain HTML so that the search crawlers can actually read it! How would you like to be forced to read Latin when you do not even know a single word? Be nice to the search crawlers and use NUXT NOW!",
+        "content": [
+          {
+            "title": "Course Introduction",
+            "url": "https://www.youtube.com/watch?v=_Dgxx2xaqJE"
+          },
+          {
+            "title": "Installing and Setting Up Nuxt JS",
+            "url": "https://www.youtube.com/watch?v=pVpRnWA9CV4"
+          },
+          {
+            "title": "Creating Pages",
+            "url": "https://www.youtube.com/watch?v=xNbViUEPKJ8"
+          },
+          {
+            "title": "Using Components for the Header",
+            "url": "https://www.youtube.com/watch?v=FdMzFNWzBdk"
+          },
+          {
+            "title": "Manipulating the Head",
+            "url": "https://www.youtube.com/watch?v=uWWf0LEa4cw"
+          },
+          {
+            "title": "Adding the (S)CSS",
+            "url": "https://www.youtube.com/watch?v=2Yqmw0SEOzA"
+          },
+          {
+            "title": "Progress Bar and Global CSS",
+            "url": "https://www.youtube.com/watch?v=nxcxAfEEtfU"
+          },
+          {
+            "title": "Transitions between Pages",
+            "url": "https://www.youtube.com/watch?v=34V8jRMEWls"
+          },
+          {
+            "title": "The End?",
+            "url": "https://www.youtube.com/watch?v=s8Rjaz_hAqo"
+          }
+        ]
+      },
+      {
+        "slug": "python-twitter-bot",
+        "title": "Python Twitter Bot",
+        "thumbnail": "https://i.postimg.cc/G2yfRc5q/Udemy-Course-Image.png",
+        "instructor": "Carter Snook",
+        "date_created": "2020-04-15",
+        "description": "In this course I will be teaching you how to create a Twitter Bot using Python 3, RandomWords, Tweepy, PyDictionary, Random, and much much more!  The first four sections will teach you how to use each of the libraries separately, with the last combining everything to top off this sundae!  We will be programmatically posting these tweets instead of controlling the mouse and other methods of creating bots!  Therefore, the python file can be running while you are playing a url game!  I hope that you enjoy watching this course as much as I had making it!",
+        "content": [
+          {
+            "title": "Setting Up a Twitter Developer Account",
+            "url": "https://www.youtube.com/watch?v=leQHuYOkMyc"
+          },
+          {
+            "title": "Installing Python 3 & Pip",
+            "url": "https://www.youtube.com/watch?v=C1-m4Ib7Vp8"
+          },
+          {
+            "title": "Setting Up Visual Studio Code",
+            "url": "https://www.youtube.com/watch?v=HaqTVBcLNgY"
+          },
+          {
+            "title": "Installing PyDictionary",
+            "url": "https://www.youtube.com/watch?v=7sNS5DPKgCQ"
+          },
+          {
+            "title": "Manipulating Dictionaries in Python",
+            "url": "https://www.youtube.com/watch?v=jxm-ska-j38"
+          },
+          {
+            "title": "Finding Definitions of Words",
+            "url": "https://www.youtube.com/watch?v=Vh5NQ4Ks5bg"
+          },
+          {
+            "title": "Generating Random Definitions of Words",
+            "url": "https://www.youtube.com/watch?v=4RxPix9a6fM"
+          },
+          {
+            "title": "Installing RandomWords",
+            "url": "https://www.youtube.com/watch?v=6XAzPQQtpFU"
+          },
+          {
+            "title": "Generating a Random Word",
+            "url": "https://www.youtube.com/watch?v=pYFW4WvytjQ"
+          },
+          {
+            "title": "Installing Tweepy",
+            "url": "https://www.youtube.com/watch?v=kMjdjcjMRQM"
+          },
+          {
+            "title": "Posting Basic Tweets",
+            "url": "https://www.youtube.com/watch?v=OQuPyLHn_Kw"
+          },
+          {
+            "title": "Posting Tweets with Images",
+            "url": "https://www.youtube.com/watch?v=U0_lghMcspo"
+          },
+          {
+            "title": "Generating Random Words with Random Definitions",
+            "url": "https://www.youtube.com/watch?v=IlhnSjGAweI"
+          },
+          {
+            "title": "Handling Random Words without Definitions",
+            "url": "https://www.youtube.com/watch?v=S_y7Ssiq0MA"
+          },
+          {
+            "title": "Tweeting the Word of the Day",
+            "url": "https://www.youtube.com/watch?v=FYoP3Sft4aY"
+          },
+          {
+            "title": "Posting Tweets Daily",
+            "url": "https://www.youtube.com/watch?v=d6MNOrIhy8Y"
+          }
+        ]
+      },
+      {
+        "slug": "intro-to-json",
+        "title": "Intro to JSON",
+        "thumbnail": "https://i.postimg.cc/wT7mj7Vq/course-thumbnail.png",
+        "instructor": "Carter Snook",
+        "date_created": "2020-05-13",
+        "description": "Hello everyone and in this course I will be teaching you everything there is to know about the popular data language called JSON.  Almost all data used in programs today is JSON.  Almost every single API in the world returns JSON data.  It is a uniform solution to the massive amount of data in this world today.  I tried to keep this course short as JSON is a very simple data language to learn with very little differences!  Now, join me in this course to learn how to understand how to write and read JSON!",
+        "content": [
+          {
+            "title": "Course Introduction",
+            "url": "https://www.youtube.com/watch?v=_Dgxx2xaqJE"
+          }
+        ]
+      },
+      {
+        "slug": "blog-with-gridsome",
+        "title": "Blog with Gridsome",
+        "thumbnail": "https://i.postimg.cc/0Npm1FC7/course-image.png",
+        "instructor": "Carter Snook",
+        "date_created": "2020-06-24",
+        "description": "Hello everyone and in this class you will be learning how to create a portfolio with a blog using Gridsome and Node.js!  We will start out by learning the basics of Gridsome and how we can configure our project.  Then, we will dive into creating pages, using layouts, and much more!  Our blog will generate pages from Markdown files so that anyone can create our content!  Vue.js and Node.js knowledge is very helpful, but not required!",
+        "content": [
+          {
+            "title": "Course Introduction",
+            "url": "https://www.youtube.com/watch?v=_Dgxx2xaqJE"
+          }
+        ]
+      }
+    ]
+  }
