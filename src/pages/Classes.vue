@@ -4,14 +4,14 @@
             <main>
                 <h1>All Classes</h1>
                 <section class="courses">
-                    <section v-for="course in data.classes.reverse()" v-bind:key="course.slug">
+                    <!-- <section v-for="course in data.classes.reverse()" v-bind:key="course.slug">
                         <CourseCard
                             :image="course.thumbnail"
                             :title="course.title"
                             :description="course.description"
                             :slug="'classes/' + course.slug"
                         />
-                    </section>
+                    </section> -->
                 </section>
             </main>
         </div>
@@ -24,9 +24,6 @@ import data from '@/data/data.yaml'
 import CourseCard from '~/components/CourseCard.vue'
 
 export default {
-    metaInfo: {
-        title: 'All Classes'
-    },
     components: {
         CourseCard
     },
