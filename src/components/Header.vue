@@ -15,11 +15,50 @@
         <div>
             <g-link to="/donate/">Support Us</g-link>
         </div>
+        <section>
+            <div class="menu-toggle-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <g-link to="/">Home</g-link>
+                <g-link to="/classes/">Classes</g-link>
+                <g-link to="/blog/">Blog</g-link>
+            </nav>
+        </section>
     </header>
 </template>
 
+<script>
+export default {
+    mounted() {
+        var nav = document.querySelector('header nav');
+        var navShown = false;
+        document.querySelector('.menu-toggle-icon').addEventListener('click', function() {            
+            if (navShown) {
+                navShown = false;
+                nav.style.right = '-75%';
+                nav.style.transition = 'right ease 250ms';
+                setTimeout(function() {
+                    nav.style.display = 'none';
+                }, 250);
+            } else {
+                navShown = true;
+                nav.style.display = 'flex';
+                nav.style.transition = 'right ease 450ms';
+                setTimeout(function() {
+                    nav.style.right = 0;
+                }, 1);
+            }
+        });
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 header {
+    z-index: 5;
     width: 80%;
     padding: .5rem 10%;
     height: 4rem;
@@ -31,10 +70,12 @@ header {
     @include phone {
         width: 90%;
         padding: .5rem 5%;
-        grid-template-columns: 100% auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     
-    div {
+    & > div {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -64,13 +105,17 @@ header {
         }
     }
 
-    div:nth-of-type(1) {
+    & > div:nth-of-type(1) {
         justify-content: left;
     }
 
-    div:nth-of-type(2) {
+    & > div:nth-of-type(2) {
         position: static;
         justify-content: center;
+
+        @include phone {
+            justify-content: flex-start;
+        }
 
         img {
             height: 2.25rem;
@@ -96,6 +141,60 @@ header {
 
     div:nth-of-type(3) {
         justify-content: flex-end;
+    }
+
+    section {
+        overflow-x: hidden;
+        display: none;
+        align-items: center;
+
+        .menu-toggle-icon {
+            width: 2.25rem;
+            margin-right: 1.5rem;
+            padding: .5rem;
+            height: 2rem;
+            // background: $dark-blue;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: .4rem;
+            cursor: pointer;
+
+            .bar {
+                width: 100%;
+                // height: 1rem;
+                background: $dark-blue;
+                border-radius: 3px;
+            }
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 5rem;
+            right: -75%;
+            flex-direction: column;
+            align-items: center;
+            width: 75%;
+            height: calc(100vh - 5rem);
+            background: #fff;
+            transition: right 400ms ease;
+            opacity: .975;
+            z-index: 5;
+
+            a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: .8rem 0;
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        
+        @include phone {
+            display: flex;
+        }
     }
 }
 </style>

@@ -51,6 +51,11 @@ export default {
             padding: 1rem 0;
             padding-bottom: 1.5rem;
             font-size: 2.5rem;
+
+            @include phone {
+                text-align: center;
+                padding: 1rem 0;
+            }
         }
 
         .courses {
