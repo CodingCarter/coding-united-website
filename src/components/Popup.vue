@@ -22,14 +22,14 @@ export default {
         }
     },
     mounted() {
-        if (localStorage.getItem('seenPopup-' + popupId) == null && !localStorage.getItem('seenPopup-' + popupId)) {
-            localStorage.setItem('seenPopup-' + popupId, true);
+        if (sessionStorage.getItem('seenPopup-' + popupId) == null && !sessionStorage.getItem('seenPopup-' + popupId)) {
+            sessionStorage.setItem('seenPopup-' + popupId, true);
 
             setTimeout(function() {
                 document.querySelector('.popup-wrapper').style.display = 'flex';
                 setTimeout(function() {
                     document.querySelector('.popup-wrapper').style.opacity = 1;
-                }, 5);
+                }, 10);
             }, 800);
         }
     }
