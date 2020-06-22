@@ -1,16 +1,22 @@
 <template>
   <div class="layout">
+    <Popup />
     <Header />
     <slot />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
+import Popup from '~/components/Popup.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    Footer,
+    Popup
   }
 }
 </script>

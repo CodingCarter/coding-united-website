@@ -39,7 +39,7 @@ classes:
   - title: Progress Bar and Global CSS
     url: https://www.youtube.com/watch?v=nxcxAfEEtfU
   
-  - title: Transitions between Pages
+  - title: Transitions Between Pages
     url: https://www.youtube.com/watch?v=34V8jRMEWls
   
   - title: The End?
@@ -111,6 +111,9 @@ classes:
   
   - title: Course Introduction
     url: https://www.youtube.com/watch?v=_Dgxx2xaqJE
+  
+  - title: JSON Vocabulary
+    url: https://quizlet.com/511718384/learn/embed?i=gm2e0&x=1jj1
 
 - slug: blog-with-gridsome
   title: Blog with Gridsome

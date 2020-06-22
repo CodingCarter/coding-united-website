@@ -15,22 +15,26 @@
                 </section>
             </section>
             <section class="class-info">
-                <h3>Class Description</h3>
-                <p class="class-description" v-html="$context.class.description" />
-                <br>
-                <h3>More Details...</h3>
-                <ul>
-                    <li>Videos: {{ $context.class.contents.length }}</li>
-                    <li>Instructor: {{ $context.class.instructor }}</li>
-                    <li>Class Created: {{ new Date($context.class.date_created).getMonth() + "-" + new Date($context.class.date_created).getMonth() + "-" + new Date($context.class.date_created).getFullYear() }}</li>
-                </ul>
+                <ClassInfo
+                    :classes_route="$context.data.classesRoute"
+                    :title="$context.class.slug"
+                    :description="$context.class.description"
+                    :contents="$context.class.contents"
+                    :instructor="$context.class.instructor"
+                    :date_created="$context.class.date_created"
+                />
             </section>
         </main>
     </Layout>
 </template>
 
 <script>
+import ClassInfo from '~/components/ClassInfo.vue'
+
 export default {
+    components: {
+        ClassInfo
+    },
     mounted() {
         document.title = document.querySelector('#class-title').innerHTML + ' Class - Coding United';
     },
@@ -161,35 +165,6 @@ main.class-page {
             }
         }
         
-    }
-
-    & > section.class-info {
-        background: $white;
-        color: $dark-blue;
-        width: 100%;
-        padding: 5rem 0;
-        padding-top: 4rem;
-
-        @include phone {
-            padding-top: 3rem;
-        }
-
-        h3 {
-            margin: 0;
-            font-size: 2.5rem;
-
-            @include phone {
-                font-size: 1.6rem;
-            }
-        }
-
-        p, li {
-            font-size: 1.1rem;
-        }
-
-        ul {
-            list-style: none;
-        }
     }
 }
 

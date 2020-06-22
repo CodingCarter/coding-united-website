@@ -3,6 +3,7 @@
         <div>
             <g-link to="/classes/">Classes</g-link>
             <g-link to="/blog/">Blog</g-link>
+            <g-link to="/mission/">Mission</g-link>
         </div>
         <div>
             <h3>
@@ -16,7 +17,7 @@
             <g-link to="/donate/">Support Us</g-link>
         </div>
         <section>
-            <div class="menu-toggle-icon">
+            <div class="menu-toggle-icon" v-on:click="toggleNav">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -25,33 +26,45 @@
                 <g-link to="/">Home</g-link>
                 <g-link to="/classes/">Classes</g-link>
                 <g-link to="/blog/">Blog</g-link>
+                <g-link to="/mission/">Mission</g-link>
             </nav>
         </section>
     </header>
 </template>
 
 <script>
+var navShown = false;
+
 export default {
-    mounted() {
-        var nav = document.querySelector('header nav');
-        var navShown = false;
-        document.querySelector('.menu-toggle-icon').addEventListener('click', function() {            
-            if (navShown) {
-                navShown = false;
-                nav.style.right = '-75%';
-                nav.style.transition = 'right ease 250ms';
+    methods: {
+        toggleNav(event) {
+            var header = document.querySelector('header');
+            var nav = document.querySelector('nav');
+            
+            if (!navShown) {
+                nav.style.display = 'flex';
+                nav.style.transition = 'all ease 450ms';
+                header.style.position = 'fixed';
+                document.body.style.marginTop = '5rem';
+                nav.style.opacity = .975;
+                setTimeout(function() {
+                    nav.style.left = 0;
+                }, 1);
+            } else {
+                nav.style.left = '-75%';
+                nav.style.transition = 'all ease 250ms';
+                nav.style.opacity = 0;
+                header.style.position = 'static';
+                document.body.style.marginTop = '0';
                 setTimeout(function() {
                     nav.style.display = 'none';
-                }, 250);
-            } else {
-                navShown = true;
-                nav.style.display = 'flex';
-                nav.style.transition = 'right ease 450ms';
-                setTimeout(function() {
-                    nav.style.right = 0;
-                }, 1);
+                }, 251);
             }
-        });
+            navShown = !navShown;
+        }
+    },
+    mounted() {
+        document.body.style.marginTop = 0;
     }
 }
 </script>
@@ -66,6 +79,7 @@ header {
     color: $light-blue;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    top: 0;
 
     @include phone {
         width: 90%;
@@ -161,9 +175,9 @@ header {
 
             .bar {
                 width: 100%;
-                // height: 1rem;
                 background: $dark-blue;
                 border-radius: 3px;
+                position: relative;
             }
         }
 
@@ -171,14 +185,15 @@ header {
             display: none;
             position: absolute;
             top: 5rem;
-            right: -75%;
+            left: -75%;
+            will-change: left;
             flex-direction: column;
             align-items: center;
             width: 75%;
             height: calc(100vh - 5rem);
             background: #fff;
             transition: right 400ms ease;
-            opacity: .975;
+            opacity: 0;
             z-index: 5;
 
             a {

@@ -15,15 +15,13 @@
                             <g-link v-for="content in $context.class.contents" v-bind:key="content.url" :to="$context.data.classesRoute + $context.class.slug + '/' + parseSlug(content.title) + '/'">
                                 <div class="active-url-link" v-if="parseSlug(content.title) == parseSlug($context.currentContent.title)">
                                     {{ $context.class.contents.indexOf(content)+1 }}.  {{ content.title }}
-                                    <v-if v-if="content.url.includes('quizlet')">
-                                        (Quizlet)
-                                    </v-if>
+                                    <g-image v-if="content.url.includes('quizlet')" src="~/assets/img/icons/quiz.png" />
+                                    <g-image v-else-if="content.url.includes('youtube')" src="~/assets/img/icons/video.png" />
                                 </div>
                                 <div v-else>
                                     {{ $context.class.contents.indexOf(content)+1 }}.  {{ content.title }}
-                                    <v-if v-if="content.url.includes('quizlet')">
-                                        (Quizlet)
-                                    </v-if>
+                                    <g-image v-if="content.url.includes('quizlet')" src="~/assets/img/icons/quiz.png" />
+                                    <g-image v-else-if="content.url.includes('youtube')" src="~/assets/img/icons/video.png" />
                                 </div>
                             </g-link>
                         </div>
@@ -31,32 +29,26 @@
                 </section>
             </main>
 
-            <section class="course-info">
-                <h1>
-                    <span v-for="content in $context.class.contents" v-bind:key="content.url">
-                        <span v-if="content.url == $context.currentContent.url" v-html="$context.class.contents.indexOf(content)+1 + '.  '" />
-                    </span>
-                    <span id="content-title">
-                        {{ $context.currentContent.title }}
-                    </span>
-                    (<span id="course-title">{{$context.class.title}}</span> Course)
-                </h1>
-                <h3>Course Description</h3>
-                <p v-html="$context.class.description" />
-                <br>
-                <h3>More Details...</h3>
-                <ul>
-                    <li>Lectures: {{ $context.class.contents.length }}</li>
-                    <li>Instructor: {{ $context.class.instructor }}</li>
-                </ul>
-                <!-- <Disqus shortname="codingunited" :identifier="$context.currentContent.title" /> -->
-            </section>
+            <ClassInfo
+                :classes_route="$context.data.classesRoute"
+                :title="$context.currentContent.title"
+                :description="$context.class.description"
+                :contents="$context.class.contents"
+                :instructor="$context.class.instructor"
+                :date_created="$context.class.date_created"
+                :include_contents="false"
+            />
         </div>
     </Layout>
 </template>
 
 <script>
+import ClassInfo from '~/components/ClassInfo.vue'
+
 export default {
+    components: {
+        ClassInfo
+    },
     methods: {
         parseSlug(slug) {
             return slug.toLowerCase().split(' ').join('-').split('(').join('').split(')').join('')
@@ -164,6 +156,14 @@ main.content {
                 text-decoration: none;
                 border: solid 1px #fff;
                 transition: 200ms ease;
+
+                img {
+                    position: relative;
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    top: .175rem;
+                    margin-left: .2rem;
+                }
                 
                 div {
                     opacity: .8;
@@ -190,48 +190,17 @@ main.content {
     }
 }
 
-section.course-info {
-    background: $white;
-    color: $dark-blue;
-    width: 80%;
-    padding: 5rem 10%;
-    padding-top: 2.5rem;
-
-    @include phone {
-        width: 90%;
-        padding: 1rem 5%;
-    }
+.content-page .class-info {
+    width: 80% !important;
+    margin: 0 auto;
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem !important;
         margin: 0;
-        color: $dark-blue;
-        padding-bottom: 2rem;
-
-        @include phone {
-            font-size: 2rem;
-            padding-bottom: 1.5rem;
-        }
     }
 
     h3 {
-        opacity: .9;
-        margin: 0;
-        font-size: 1.8rem;
-        font-weight: 500;
-
-        @include phone {
-            font-size: 1.6rem;
-        }
-    }
-
-    p, li {
-        opacity: .85;
-        font-size: 1.1rem;
-    }
-
-    ul {
-        list-style: none;
+        font-size: 2rem !important;
     }
 }
 </style>
