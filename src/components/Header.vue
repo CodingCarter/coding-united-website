@@ -64,7 +64,7 @@ export default {
         }
     },
     mounted() {
-        document.body.style.marginTop = 0;
+        document.querySelector('body').style.marginTop = 0;
     }
 }
 </script>

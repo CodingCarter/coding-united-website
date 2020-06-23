@@ -36,10 +36,12 @@ export default {
         ClassInfo
     },
     mounted() {
-        document.title = document.querySelector('#class-title').innerHTML + ' Class - Coding United';
+        
+        // document.title = document.querySelector('h1').innerHTML + ' Class - Coding United';
     },
     updated() {
-        document.title = document.querySelector('#class-title').innerHTML + ' Class - Coding United';
+        // console.log(document.querySelector('.class-info'));
+        // document.title = document.querySelector('h1').innerHTML + ' Class - Coding United';
     }
 }
 </script>
