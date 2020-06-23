@@ -12,6 +12,7 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Coding United',
+  siteUrl: 'https://codingunited.netlify.app',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -19,6 +20,26 @@ module.exports = {
         typeName: 'Post',
         path: './blog/posts/*.md',
         route: '/blog/:title'
+      }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        // exclude: ['/exclude-me'],
+        config: {
+          '/classes/': {
+            changefreq: 'weekly',
+            priority: .9
+          },
+          '/classes/**/': {
+            changefreq: 'weekly',
+            priority: 0.8
+          },
+          '/classes/**/*': {
+            changefreq: 'weekly',
+            priority: 0.7
+          }
+        }
       }
     }
   ],
