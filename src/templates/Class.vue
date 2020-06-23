@@ -3,7 +3,7 @@
         <main class="class-page">
             <section class="class-main">
                 <g-link :to="$context.data.classesRoute + $context.class.slug + '/' + $context.class.contents[0].title.toLowerCase().split(' ').join('-').split('(').join('').split(')').join('').split('?').join('') + '/'">
-                    <img :src="$context.class.thumbnail" alt="class image">
+                    <g-image :src="$context.class.thumbnail" alt="class image" />
                     <div>
                         <div></div>
                     </div>
@@ -35,13 +35,20 @@ export default {
     components: {
         ClassInfo
     },
-    mounted() {
-        
-        // document.title = document.querySelector('h1').innerHTML + ' Class - Coding United';
-    },
-    updated() {
-        // console.log(document.querySelector('.class-info'));
-        // document.title = document.querySelector('h1').innerHTML + ' Class - Coding United';
+    metaInfo() {
+        return {
+            title: this.$context.class.title,
+            meta: [
+                {
+                    name: 'description',
+                    content: this.$context.class.description.length > 165 ? this.$context.class.description.substring(0, 162) + '...' : this.$context.class.description
+                },
+                {
+                    name: 'author',
+                    content: this.$context.class.instructor
+                }
+            ]
+        }
     }
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
     <footer>
         <h4>Free Icons by <g-link to="https://icons8.com/">Icons8.com</g-link></h4>
+        <g-link to="/sitemap/">Sitemap (for bots)</g-link>
     </footer>
 </template>
 
@@ -11,7 +12,7 @@ footer {
     text-align: center;
 
     h4 {
-        font-size: 2rem;
+        font-size: 1rem;
         margin: 0;
     }
 }

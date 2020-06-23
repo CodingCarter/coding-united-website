@@ -15,8 +15,8 @@
                             <g-link v-for="content in $context.class.contents" v-bind:key="content.url" :to="$context.data.classesRoute + $context.class.slug + '/' + parseSlug(content.title) + '/'">
                                 <div class="active-url-link" v-if="parseSlug(content.title) == parseSlug($context.currentContent.title)">
                                     {{ $context.class.contents.indexOf(content)+1 }}.  {{ content.title }}
-                                    <g-image v-if="content.url.includes('quizlet')" src="~/assets/img/icons/quiz.png" />
-                                    <g-image v-else-if="content.url.includes('youtube')" src="~/assets/img/icons/video.png" />
+                                    <g-image v-if="content.url.includes('quizlet')" alt="quiz icon" src="~/assets/img/icons/quiz.png" />
+                                    <g-image v-else-if="content.url.includes('youtube')" alt="video icon" src="~/assets/img/icons/video.png" />
                                 </div>
                                 <div v-else>
                                     {{ $context.class.contents.indexOf(content)+1 }}.  {{ content.title }}
@@ -54,29 +54,20 @@ export default {
             return slug.toLowerCase().split(' ').join('-').split('(').join('').split(')').join('')
         }
     },
-    mounted() {
-        document.title = document.querySelector('#content-title').innerHTML.split('&amp;').join('and') + ' - ' + document.querySelector('#course-title').innerHTML + ' Class';
-    },
-    updated() {
-        document.title = document.querySelector('#content-title').innerHTML.split('&amp;').join('and') + ' - ' + document.querySelector('#course-title').innerHTML + ' Class';
-
-        // function parseSlug(slug) {
-        //     return slug.toLowerCase().split(' ').join('-').split('(').join('').split(')').join('')
-        // }
-        
-        // let storage = window.localStorage;
-
-        // if (storage.getItem('completed') == null) storage.setItem('completed', '')
-
-        // document.querySelectorAll('.contentss a div').forEach(url => {            
-        //     if (storage.getItem('completed').includes(parseSlug(url.innerHTML.split('. ')[1].trim()))) {  
-        //         url.classList.add('completed-content')
-        //     }
-        // })
-
-        // setTimeout(() => {
-        //     storage.setItem('completed', storage.getItem('completed') + '_' + location.href.split('/')[4])
-        // }, 90 * 1000)
+    metaInfo() {
+        return {
+            title: this.$context.currentContent.title,
+            meta: [
+                {
+                    name: 'description',
+                    content: this.$context.class.description.length > 165 ? this.$context.class.description.substring(0, 162) + '...' : this.$context.class.description
+                },
+                {
+                    name: 'author',
+                    content: this.$context.class.instructor
+                }
+            ]
+        }
     }
 }
 </script>

@@ -31,6 +31,11 @@ export default {
         return {
             data
         }
+    },
+    metaInfo() {
+        return {
+            title: 'Classes'
+        }
     }
 }
 </script>

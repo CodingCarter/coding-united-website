@@ -6,6 +6,17 @@
                 <h3>Instructor</h3>
                 <h1 v-html="$context.instructor.name" />
                 <h2 v-html="$context.instructor.bio" />
+                <div class="instructor-links">
+                    <g-link v-if="$context.instructor.website" :to="$context.instructor.website">
+                        <g-image src="https://img.icons8.com/wired/64/000000/domain.png" alt="website icon" />
+                    </g-link>
+                    <g-link v-if="$context.instructor.twitter" :to="'https://twitter.com/' + $context.instructor.twitter">
+                        <g-image src="https://img.icons8.com/android/48/000000/twitter.png" alt="twitter icon" />
+                    </g-link>
+                    <g-link v-if="$context.instructor.youtube" :to="'https://youtube.com/channel/' + $context.instructor.youtube">
+                        <g-image src="https://img.icons8.com/material/24/000000/youtube-play--v1.png" alt="youtube icon" />
+                    </g-link>
+                </div>
             </section>
             <h2>{{ $context.instructor.name.split(' ')[0] }}'s Latest Classes</h2>
             <section class="courses" id="classes">
@@ -98,6 +109,23 @@ main.instructor {
             @include phone {
                 font-size: 1.25rem;
                 max-width: 75%;
+            }
+        }
+    }
+
+    .instructor-links {
+        display: flex;
+        margin-top: .75rem;
+
+        a {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            padding: 1rem;
+
+            img {
+                width: 100%;
+                height: 100%;
             }
         }
     }
