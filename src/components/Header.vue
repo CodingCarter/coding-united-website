@@ -14,7 +14,7 @@
             </h3>
         </div>
         <div>
-            <g-link to="/donate/">Support Us</g-link>
+            <g-link to="https://paypal.me/pools/c/8pM61fZh5O" target="_blank">Support Us</g-link>
         </div>
         <section>
             <div class="menu-toggle-icon" v-on:click="toggleNav">
